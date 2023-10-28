@@ -1,7 +1,6 @@
 # Project
 
 ## Dataset description
-
 Title: Book authors\
 Author: Tomislav Kožul\
 Keywords: authors\
