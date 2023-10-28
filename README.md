@@ -10,4 +10,4 @@ Update frequency: undefined\
 Current version: 1.0\
 Author: Tomislav Kožul\
 Contact information: tk53406@fer.hr\
-License: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/deed.en)
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.en)
