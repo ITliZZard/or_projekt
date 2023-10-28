@@ -2,10 +2,12 @@
 
 ## Dataset description
 Title: Book authors\
-Author: Tomislav Kožul\
+Category: Education\
 Keywords: authors\
+Language: English\
 Publication date: 30.10.2023\
 Update frequency: undefined\
-Language: English\
 Current version: 1.0\
+Author: Tomislav Kožul\
+Contact information: tk53406@fer.hr\
 License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
