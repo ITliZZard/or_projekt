@@ -1,0 +1,200 @@
+{
+   "1": {
+      "first_name": "George",
+      "last_name": "Orwell",
+      "birth_date": "25 Jun 1903",
+      "death_date": "25 Jun 1903",
+      "children_count": 1,
+      "attended college": "Eton College",
+      "college location": "United Kingdom",
+      "bibliography": {
+         "1": {
+            "book_name": "1984",
+            "release_year": 1949
+         },
+         "2": {
+            "book_name": "Animal Farm",
+            "release_year": 1945
+         }
+      }
+   },
+   "2": {
+      "first_name": "Ernest",
+      "last_name": "Hemingway",
+      "birth_date": "21 Jul 1899",
+      "death_date": "02 Jul 1961",
+      "children_count": 3,
+      "attended college": "No",
+      "college location": "N/A",
+      "bibliography": {
+         "3": {
+            "book_name": "The Old Man and the Sea",
+            "release_year": 1952
+         },
+         "4": {
+            "book_name": "A Farewell to Arms",
+            "release_year": 1929
+         }
+      }
+   },
+   "3": {
+      "first_name": "Franz",
+      "last_name": "Kafka",
+      "birth_date": "03 Jul 1883",
+      "death_date": "03 Jun 1924",
+      "children_count": 0,
+      "attended college": "Charles University",
+      "college location": "Czech Republic",
+      "bibliography": {
+         "5": {
+            "book_name": "The Metamorphosis",
+            "release_year": 1915
+         },
+         "6": {
+            "book_name": "The Trial",
+            "release_year": 1925
+         },
+         "7": {
+            "book_name": "The Castle",
+            "release_year": 1926
+         }
+      }
+   },
+   "4": {
+      "first_name": "Fyodor",
+      "last_name": "Dostoevsky",
+      "birth_date": "11 Nov 1821",
+      "death_date": "09 Feb 1881",
+      "children_count": 4,
+      "attended college": "Academy of Military Engineering",
+      "college location": "Russia",
+      "bibliography": {
+         "8": {
+            "book_name": "Crime and Punishment",
+            "release_year": 1866
+         },
+         "9": {
+            "book_name": "The Brothers Karamazov",
+            "release_year": 1880
+         }
+      }
+   },
+   "5": {
+      "first_name": "Agatha",
+      "last_name": "Christie",
+      "birth_date": "15 Sep 1890",
+      "death_date": "12 Jan 1976",
+      "children_count": 1,
+      "attended college": "No",
+      "college location": "N/A",
+      "bibliography": {
+         "10": {
+            "book_name": "Murder on the Orient Express",
+            "release_year": 1934
+         },
+         "11": {
+            "book_name": "And Then There Were None",
+            "release_year": 1939
+         }
+      }
+   },
+   "6": {
+      "first_name": "Cormac",
+      "last_name": "McCarthy",
+      "birth_date": "20 Jul 1933",
+      "death_date": "13 Oct 2023",
+      "children_count": 1,
+      "attended college": "University of Tennessee",
+      "college location": "United States",
+      "bibliography": {
+         "12": {
+            "book_name": "Blood Meridian",
+            "release_year": 1985
+         },
+         "13": {
+            "book_name": "No Country for Old Men",
+            "release_year": 2005
+         }
+      }
+   },
+   "7": {
+      "first_name": "Leo",
+      "last_name": "Tolstoy",
+      "birth_date": "09 Sep 1828",
+      "death_date": "20 Nov 1910",
+      "children_count": 13,
+      "attended college": "Kazan University",
+      "college location": "Russia",
+      "bibliography": {
+         "15": {
+            "book_name": "War and Peace",
+            "release_year": 1865
+         },
+         "16": {
+            "book_name": "Anna Karenina",
+            "release_year": 1875
+         }
+      }
+   },
+   "8": {
+      "first_name": "Charles",
+      "last_name": "Darwin",
+      "birth_date": "12 Feb 1809",
+      "death_date": "19 Apr 1882",
+      "children_count": 10,
+      "attended college": "Christs College",
+      "college location": "United Kingdom",
+      "bibliography": {
+         "17": {
+            "book_name": "On the Origin of Species",
+            "release_year": 1859
+         },
+         "18": {
+            "book_name": "The Descent of Man",
+            "release_year": 1871
+         }
+      }
+   },
+   "9": {
+      "first_name": "Napoleon",
+      "last_name": "Hill",
+      "birth_date": "26 Oct 1883",
+      "death_date": "08 Nov 1970",
+      "children_count": 3,
+      "attended college": "Georgetown University",
+      "college location": "United States",
+      "bibliography": {
+         "19": {
+            "book_name": "Think and Grow Rich",
+            "release_year": 1937
+         },
+         "20": {
+            "book_name": "The Law of Success",
+            "release_year": 1925
+         },
+         "21": {
+            "book_name": "The Master Key to Riches",
+            "release_year": 1945
+         }
+      }
+   },
+   "10": {
+      "first_name": "Aldous",
+      "last_name": "Huxley",
+      "birth_date": "26 Jul 1894",
+      "death_date": "22 Nov 1963",
+      "children_count": 1,
+      "attended college": "Balliol College",
+      "college location": "United Kingdom",
+      "bibliography": {
+         "22": {
+            "book_name": "Brave New World",
+            "release_year": 1932
+         },
+         "23": {
+            "book_name": "The Doors of Perception",
+            "release_year": 1954
+         }
+      }
+   }
+}
