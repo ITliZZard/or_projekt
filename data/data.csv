@@ -1,23 +1,23 @@
-First Name,Last Name,Birth Date,Death Date,Children Count,Attended College,College Location,Book Name,Release Year
-George,Orwell,25 Jun 1903,25 Jun 1903,1,Eton College,United Kingdom,1984,1949
-George,Orwell,25 Jun 1903,25 Jun 1903,1,Eton College,United Kingdom,Animal Farm,1945
-Ernest,Hemingway,21 Jul 1899,02 Jul 1961,3,No,N/A,The Old Man and the Sea,1952
-Ernest,Hemingway,21 Jul 1899,02 Jul 1961,3,No,N/A,A Farewell to Arms,1929
-Franz,Kafka,03 Jul 1883,03 Jun 1924,0,Charles University,Czech Republic,The Metamorphosis,1915
-Franz,Kafka,03 Jul 1883,03 Jun 1924,0,Charles University,Czech Republic,The Trial,1925
-Franz,Kafka,03 Jul 1883,03 Jun 1924,0,Charles University,Czech Republic,The Castle,1926
-Fyodor,Dostoevsky,11 Nov 1821,09 Feb 1881,4,Academy of Military Engineering,Russia,Crime and Punishment,1866
-Fyodor,Dostoevsky,11 Nov 1821,09 Feb 1881,4,Academy of Military Engineering,Russia,The Brothers Karamazov,1880
-Agatha,Christie,15 Sep 1890,12 Jan 1976,1,No,N/A,Murder on the Orient Express,1934
-Agatha,Christie,15 Sep 1890,12 Jan 1976,1,No,N/A,And Then There Were None,1939
-Cormac,McCarthy,20 Jul 1933,13 Oct 2023,1,University of Tennessee,United States,Blood Meridian,1985
-Cormac,McCarthy,20 Jul 1933,13 Oct 2023,1,University of Tennessee,United States,No Country for Old Men,2005
-Leo,Tolstoy,09 Sep 1828,20 Nov 1910,13,Kazan University,Russia,War and Peace,1865
-Leo,Tolstoy,09 Sep 1828,20 Nov 1910,13,Kazan University,Russia,Anna Karenina,1875
-Charles,Darwin,12 Feb 1809,19 Apr 1882,10,Christs College,United Kingdom,On the Origin of Species,1859
-Charles,Darwin,12 Feb 1809,19 Apr 1882,10,Christs College,United Kingdom,The Descent of Man,1871
-Napoleon,Hill,26 Oct 1883,08 Nov 1970,3,Georgetown University,United States,Think and Grow Rich,1937
-Napoleon,Hill,26 Oct 1883,08 Nov 1970,3,Georgetown University,United States,The Law of Success,1925
-Napoleon,Hill,26 Oct 1883,08 Nov 1970,3,Georgetown University,United States,The Master Key to Riches,1945
-Aldous,Huxley,26 Jul 1894,22 Nov 1963,1,Balliol College,United Kingdom,Brave New World,1932
-Aldous,Huxley,26 Jul 1894,22 Nov 1963,1,Balliol College,United Kingdom,The Doors of Perception,1954
+Author ID,First Name,Last Name,Birth Date,Death Date,Children Count,Attended College,College Location,Book ID,Book Name,Release Year
+1,George,Orwell,25 Jun 1903,25 Jun 1903,1,Eton College,United Kingdom,1,1984,1949
+1,George,Orwell,25 Jun 1903,25 Jun 1903,1,Eton College,United Kingdom,2,Animal Farm,1945
+2,Ernest,Hemingway,21 Jul 1899,02 Jul 1961,3,No,N/A,3,The Old Man and the Sea,1952
+2,Ernest,Hemingway,21 Jul 1899,02 Jul 1961,3,No,N/A,4,A Farewell to Arms,1929
+3,Franz,Kafka,03 Jul 1883,03 Jun 1924,0,Charles University,Czech Republic,5,The Metamorphosis,1915
+3,Franz,Kafka,03 Jul 1883,03 Jun 1924,0,Charles University,Czech Republic,6,The Trial,1925
+3,Franz,Kafka,03 Jul 1883,03 Jun 1924,0,Charles University,Czech Republic,7,The Castle,1926
+4,Fyodor,Dostoevsky,11 Nov 1821,09 Feb 1881,4,Academy of Military Engineering,Russia,8,Crime and Punishment,1866
+4,Fyodor,Dostoevsky,11 Nov 1821,09 Feb 1881,4,Academy of Military Engineering,Russia,9,The Brothers Karamazov,1880
+5,Agatha,Christie,15 Sep 1890,12 Jan 1976,1,No,N/A,10,Murder on the Orient Express,1934
+5,Agatha,Christie,15 Sep 1890,12 Jan 1976,1,No,N/A,11,And Then There Were None,1939
+6,Cormac,McCarthy,20 Jul 1933,13 Oct 2023,1,University of Tennessee,United States,12,Blood Meridian,1985
+6,Cormac,McCarthy,20 Jul 1933,13 Oct 2023,1,University of Tennessee,United States,13,No Country for Old Men,2005
+7,Leo,Tolstoy,09 Sep 1828,20 Nov 1910,13,Kazan University,Russia,15,War and Peace,1865
+7,Leo,Tolstoy,09 Sep 1828,20 Nov 1910,13,Kazan University,Russia,16,Anna Karenina,1875
+8,Charles,Darwin,12 Feb 1809,19 Apr 1882,10,Christs College,United Kingdom,17,On the Origin of Species,1859
+8,Charles,Darwin,12 Feb 1809,19 Apr 1882,10,Christs College,United Kingdom,18,The Descent of Man,1871
+9,Napoleon,Hill,26 Oct 1883,08 Nov 1970,3,Georgetown University,United States,19,Think and Grow Rich,1937
+9,Napoleon,Hill,26 Oct 1883,08 Nov 1970,3,Georgetown University,United States,20,The Law of Success,1925
+9,Napoleon,Hill,26 Oct 1883,08 Nov 1970,3,Georgetown University,United States,21,The Master Key to Riches,1945
+10,Aldous,Huxley,26 Jul 1894,22 Nov 1963,1,Balliol College,United Kingdom,22,Brave New World,1932
+10,Aldous,Huxley,26 Jul 1894,22 Nov 1963,1,Balliol College,United Kingdom,23,The Doors of Perception,1954
