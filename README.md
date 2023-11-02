@@ -14,14 +14,14 @@ Contact information: tk53406@fer.hr\
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.en)
 
 ## Data attributes
-Author ID (author_id): identification number of the author stored in the database
-First Name (first_name): first name of the author
-Last Name (last_name): last name of the author
-Birth Date (birth_date): birth date of the author
-Death Date (death_date): death date of the author
-Children Count (children_count): number of children the author had
-Attended College (attended_college): name of the college the author has attended
-College Location (college_location): country in which the given college was located in
-Book ID (book_id): identification number of the book stored in the database
-Book Name (book_name): name of the book
-Release Year (release_year): the year the book was released
+Author ID (*author_id): identification number of the author stored in the database\
+First Name (*first_name): first name of the author\
+Last Name (*last_name): last name of the author\
+Birth Date (*birth_date): birth date of the author\
+Death Date (*death_date): death date of the author\
+Children Count (*children_count): number of children the author had\
+Attended College (*attended_college): name of the college the author has attended\
+College Location (*college_location): country in which the given college was located in\
+Book ID (*book_id): identification number of the book stored in the database\
+Book Name (*book_name): name of the book\
+Release Year (*release_year): the year the book was released
