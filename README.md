@@ -2,26 +2,26 @@
 The dataset presents data about the book's authors. It contains information about their names, birth and death dates, about their education, and bibliography (names of their most popular books and years they were published).
 
 ## Dataset description
-Title: Book authors\
-Category: Education\
-Keywords: authors\
-Language: English\
-Publication date: 30.10.2023\
-Update frequency: undefined\
-Current version: 1.0\
-Author: Tomislav Kožul\
-Contact information: tk53406@fer.hr\
-License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.en)
+<strong>Title</strong>: Book authors\
+<strong>Category</strong>: Education\
+<strong>Keywords</strong>: authors\
+<strong>Language</strong>: English\
+<strong>Publication date</strong>: 30.10.2023\
+<strong>Update frequency</strong>: undefined\
+<strong>Current version</strong>: 1.0\
+<strong>Author</strong>: Tomislav Kožul\
+<strong>Contact information</strong>: tk53406@fer.hr\
+<strong>License</strong>: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.en)
 
 ## Data attributes
-Author ID (<em>author_id<em>): identification number of the author stored in the database\
-First Name (*first_name): first name of the author\
-Last Name (*last_name): last name of the author\
-Birth Date (*birth_date): birth date of the author\
-Death Date (*death_date): death date of the author\
-Children Count (*children_count): number of children the author had\
-Attended College (*attended_college): name of the college the author has attended\
-College Location (*college_location): country in which the given college was located in\
-Book ID (*book_id): identification number of the book stored in the database\
-Book Name (*book_name): name of the book\
-Release Year (*release_year): the year the book was released
+<strong>Author ID (<em>author_id</em>)</strong>: identification number of the author stored in the database\
+<strong>First Name (<em>first_name</em>)</strong>: first name of the author\
+<strong>Last Name (<em>last_name</em>)</strong>: last name of the author\
+<strong>Birth Date (<em>birth_date</em>)</strong>: birth date of the author\
+<strong>Death Date (<em>death_date</em>)</strong>: death date of the author\
+<strong>Children Count (<em>children_count</em>)</strong>: number of children the author had\
+<strong>Attended College (<em>attended_college</em>)</strong>: name of the college the author has attended\
+<strong>College Location (<em>college_location</em>)</strong>: country in which the given college was located in\
+<strong>Book ID (<em>book_id</em>)</strong>: identification number of the book stored in the database\
+<strong>Book Name (<em>book_name</em>)</strong>: name of the book\
+<strong>Release Year (<em>release_year</em>)</strong>: the year the book was released
