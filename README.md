@@ -14,7 +14,7 @@ Contact information: tk53406@fer.hr\
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.en)
 
 ## Data attributes
-Author ID ( *author_id ): identification number of the author stored in the database\
+Author ID ( _author_id ): identification number of the author stored in the database\
 First Name (*first_name): first name of the author\
 Last Name (*last_name): last name of the author\
 Birth Date (*birth_date): birth date of the author\
