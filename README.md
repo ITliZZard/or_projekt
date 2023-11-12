@@ -2,7 +2,7 @@
 
 
 ## Data description
-The dataset presents data about the book's authors.\
+The dataset presents data about the book's authors.
 
 <strong>Title</strong>: Books' authors\
 <strong>Category</strong>: Education\
