@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Books' Authors</title>
+    <meta name="description" content="Data about the books' authors" />
+    <meta name="category" content="Education" />
+    <meta name="keywords" content="authors, books, literature, education" />
+    <meta http-equiv="Content-Language" content="English" />
+    <meta name="publication_date" content="2023-10-30" />
+    <meta name="update_frequency" content="undefined" />
+    <meta name="version" content="1.0" />
+    <meta name="author" content="Tomislav Kožul" />
+    <meta name="contact" content="tk53406@fer.hr" />
+    <meta name="license" content="CC0 1.0 Universal" />
+    <link rel="stylesheet" href="frontend/style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 class="site_title">BOOKS' AUTHORS</h1>
+
+        <div class="bar_container">
+            <div class="bar">
+                <label class="bar_element">Search:</label>
+                <input type="text" id="filter_value" placeholder="Search..." class="bar_element">
+                <label class="bar_element">Filter by:</label>
+                <select id="filter_by" class="bar_element">
+                    <option value="all">All attributes</option> 
+                    <option value="author_id">Author ID</option>  
+                    <option value="first_name">First name</option>
+                    <option value="last_name">Last name</option>
+                    <option value="birth_year">Birth year</option>
+                    <option value="death_year">Death year</option>
+                    <option value="number_of_children">Number of children</option>
+                    <option value="university">University</option>
+                    <option value="location">Location</option>
+                    <option value="book_id">Book ID</option>
+                    <option value="book_name">Book name</option>
+                    <option value="release_year">Release year</option>
+                </select>
+                <button onclick="applyFilter()" class="bar_element blue_button">Apply filter</button>
+                <button onclick="clearFilters()" class="bar_element white_button">Clear filters</button>
+            </div>
+        </div>
+
+        <div id="result_table" class="result_container"></div>
+
+        <div class="bar_container">
+            <div class="bar">
+                <label class="bar_element">Download data:</label>
+                <button onclick="download_json()" class="bar_element white_button">'.json' data</button>
+                <button onclick="download_csv()" class="bar_element white_button">'.csv' data</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="frontend/logic.js" defer></script>
+</body>
+</html>

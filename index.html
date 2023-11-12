@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Books' Authors</title>
+    <meta name="description" content="Data about the books' authors" />
+    <meta name="category" content="Education" />
+    <meta name="keywords" content="authors, books, literature, education" />
+    <meta http-equiv="Content-Language" content="English" />
+    <meta name="publication_date" content="2023-10-30" />
+    <meta name="update_frequency" content="undefined" />
+    <meta name="version" content="1.0" />
+    <meta name="author" content="Tomislav Kožul" />
+    <meta name="contact" content="tk53406@fer.hr" />
+    <meta name="license" content="CC0 1.0 Universal" />
+    <link rel="stylesheet" href="frontend/style.css">
+</head>
+<body>
+    <div class="container">
+
+        <h1 class="site_title">BOOKS' AUTHORS</h1>
+
+        <h3 class="site_description">Welcome to our resource for discovering authors behind your favorite books. Here, we provide essential information about the creative minds in the literary world.</h3>
+
+        <h3 class="site_description">Access the basic information about these authors in user-friendly <a href="https://github.com/tomislav-kozul/or_projekt/blob/main/data/data.csv">'.csv'</a> or <a href="https://github.com/tomislav-kozul/or_projekt/blob/main/data/data.json">'.json'</a> formats, perfect for quick reference or simple projects.</h3>
+
+        <h3 class="site_description">To see a straightforward table of authors and their works, please press the button below. It's your gateway to a world of literary creators.</h3>
+        <div class="button_container">
+            
+            <a href="datatable.html"><button class="blue_button small_button">BROWSE TABLES</button></a>
+            
+            <button onclick="fetch_json()" class="white_button small_button">download '.json'</button>
+            <button onclick="fetch_csv()" class="white_button small_button">download '.csv'</button>
+        </div>
+        
+        <h3 class="site_description" id="error_field"></h3>
+
+    </div>
+    <script src="frontend/logic.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+{
+    "$schema": "https://github.com/tomislav-kozul/or_projekt/blob/main/data/schema.json",
+    "$id": "https://github.com/tomislav-kozul/or_projekt/blob/main/data/data.json",
+    "type": "array",
+    "default": [],
+    "title": "Books' authors schema",
+    "items": {
+        "type": "object",
+        "default": {},
+        "title": "Author schema",
+        "required": [
+            "author_id",
+            "first_name",
+            "last_name",
+            "birth_date",
+            "death_date",
+            "children_count",
+            "bibliography"
+        ],
+        "properties": {
+            "author_id": {
+                "type": "long",
+                "default": 0,
+                "title": "The author_id Schema",
+                "examples": [
+                    1
+                ]
+            },
+            "first_name": {
+                "type": "string",
+                "default": "",
+                "title": "The first_name Schema",
+                "examples": [
+                    "George"
+                ]
+            },
+            "last_name": {
+                "type": "string",
+                "default": "",
+                "title": "The last_name Schema",
+                "examples": [
+                    "Orwell"
+                ]
+            },
+            "birth_date": {
+                "type": "date",
+                "default": "",
+                "title": "The birth_date Schema",
+                "examples": [
+                    "25 Jun 1903"
+                ]
+            },
+            "death_date": {
+                "type": "date",
+                "default": "",
+                "title": "The death_date Schema",
+                "examples": [
+                    "25 Jun 1903"
+                ]
+            },
+            "children_count": {
+                "type": "integer",
+                "default": 0,
+                "title": "The children_count Schema",
+                "examples": [
+                    1
+                ]
+            },
+            "attended college": {
+                "type": "string",
+                "default": "",
+                "title": "The attended college Schema",
+                "examples": [
+                    "Eton College"
+                ]
+            },
+            "college location": {
+                "type": "string",
+                "default": "",
+                "title": "The college location Schema",
+                "examples": [
+                    "United Kingdom"
+                ]
+            },
+            "bibliography": {
+                "type": "array",
+                "default": [],
+                "title": "The bibliography Schema",
+                "items": {
+                    "type": "object",
+                    "title": "Book schema",
+                    "required": [
+                        "book_id",
+                        "book_name",
+                        "release_year"
+                    ],
+                    "properties": {
+                        "book_id": {
+                            "type": "long",
+                            "title": "The book_id Schema",
+                            "examples": [
+                                1,
+                                2
+                            ]
+                        },
+                        "book_name": {
+                            "type": "string",
+                            "title": "The book_name Schema",
+                            "examples": [
+                                "1984",
+                                "Animal Farm"
+                            ]
+                        },
+                        "release_year": {
+                            "type": "integer",
+                            "title": "The release_year Schema",
+                            "examples": [
+                                1949,
+                                1945
+                            ]
+                        }
+                    },
+                    "examples": [{
+                        "book_id": 1,
+                        "book_name": "1984",
+                        "release_year": 1949
+                    },
+                    {
+                        "book_id": 2,
+                        "book_name": "Animal Farm",
+                        "release_year": 1945
+                    }]
+                },
+                "examples": [
+                    [{
+                        "book_id": 1,
+                        "book_name": "1984",
+                        "release_year": 1949
+                    },
+                    {
+                        "book_id": 2,
+                        "book_name": "Animal Farm",
+                        "release_year": 1945
+                    }]
+                ]
+            }
+        },
+        "examples": [{
+            "author_id": 1,
+            "first_name": "George",
+            "last_name": "Orwell",
+            "birth_date": "25 Jun 1903",
+            "death_date": "25 Jun 1903",
+            "children_count": 1,
+            "attended college": "Eton College",
+            "college location": "United Kingdom",
+            "bibliography": [{
+                "book_id": 1,
+                "book_name": "1984",
+                "release_year": 1949
+            },
+            {
+                "book_id": 2,
+                "book_name": "Animal Farm",
+                "release_year": 1945
+            }]
+        }]
+    },
+    "examples": [
+        [{
+            "author_id": 1,
+            "first_name": "George",
+            "last_name": "Orwell",
+            "birth_date": "25 Jun 1903",
+            "death_date": "25 Jun 1903",
+            "children_count": 1,
+            "attended college": "Eton College",
+            "college location": "United Kingdom",
+            "bibliography": [{
+                "book_id": 1,
+                "book_name": "1984",
+                "release_year": 1949
+            },
+            {
+                "book_id": 2,
+                "book_name": "Animal Farm",
+                "release_year": 1945
+            }]
+        }]
+    ],
+    "description": "Data about the books' authors",
+    "author": "Tomislav Kožul"
+}
