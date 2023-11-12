@@ -1,4 +1,5 @@
 # Project
+This open-source project provides essential data about books' authors in .csv and .json formats. It features an intuitive application with frontend and backend, allowing users to browse, filter, and download author information in a table format. Ideal for literary enthusiasts and researchers, the platform makes accessing and interacting with author data straightforward and efficient. It serves as a valuable resource for exploring the diverse literary world and its creators.
 
 
 ## Data description
