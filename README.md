@@ -2,7 +2,7 @@
 The dataset presents data about the book's authors. It contains information about their names, birth and death dates, about their education, and bibliography (names of their most popular books and years they were published).
 
 ## Data description
-<strong>Title</strong>: Book authors\
+<strong>Title</strong>: Books' authors\
 <strong>Category</strong>: Education\
 <strong>Keywords</strong>: authors\
 <strong>Language</strong>: English\
