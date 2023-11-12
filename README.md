@@ -5,7 +5,7 @@
 
 
 <strong>Title</strong>: Books' authors\
-<strong>Description: </strong>: Data about the books' authors\
+<strong>Description</strong>: Data about the books' authors\
 <strong>Category</strong>: Education\
 <strong>Keywords</strong>: authors\
 <strong>Language</strong>: English\
