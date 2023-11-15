@@ -1,6 +1,6 @@
 {
-    "$schema": "https://github.com/tomislav-kozul/or_projekt/blob/main/data/schema.json",
-    "$id": "https://github.com/tomislav-kozul/or_projekt/blob/main/data/data.json",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://github.com/tomislav-kozul/or_projekt/blob/main/data/schema.json",
     "type": "array",
     "default": [],
     "title": "Books' authors schema",
@@ -19,7 +19,7 @@
         ],
         "properties": {
             "author_id": {
-                "type": "long",
+                "type": "integer",
                 "default": 0,
                 "title": "The author_id Schema",
                 "examples": [
@@ -43,7 +43,7 @@
                 ]
             },
             "birth_date": {
-                "type": "date",
+                "type": "string",
                 "default": "",
                 "title": "The birth_date Schema",
                 "examples": [
@@ -51,7 +51,7 @@
                 ]
             },
             "death_date": {
-                "type": "date",
+                "type": "string",
                 "default": "",
                 "title": "The death_date Schema",
                 "examples": [
@@ -96,7 +96,7 @@
                     ],
                     "properties": {
                         "book_id": {
-                            "type": "long",
+                            "type": "integer",
                             "title": "The book_id Schema",
                             "examples": [
                                 1,
@@ -166,6 +166,8 @@
             }]
         }]
     },
+    "description": "Data about the books' authors",
+    "author": "Tomislav Kožul",
     "examples": [
         [{
             "author_id": 1,
@@ -187,7 +189,5 @@
                 "release_year": 1945
             }]
         }]
-    ],
-    "description": "Data about the books' authors",
-    "author": "Tomislav Kožul"
+    ]
 }
