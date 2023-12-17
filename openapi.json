@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Books' authors - OpenAPI 3.0",
-    "description": "This open-source project provides essential data about books' authors in .csv and .json formats. It features an intuitive application with frontend and backend, allowing users to browse, filter, and download author information in a table format.\n\nIdeal for literary enthusiasts and researchers, the platform makes accessing and interacting with author data straightforward and efficient. It serves as a valuable resource for exploring the diverse literary world and its creators.\n\nSome useful links:\n- [Books' authors repository](https://github.com/tomislav-kozul/or_projekt)\n- [The source API definition for the Books authors >>> DODAJ DODAJ]()",
+    "description": "This open-source project provides essential data about books' authors in .csv and .json formats. It features an intuitive application with frontend and backend, allowing users to browse, filter, and download author information in a table format.\n\nIdeal for literary enthusiasts and researchers, the platform makes accessing and interacting with author data straightforward and efficient. It serves as a valuable resource for exploring the diverse literary world and its creators.\n\nSome useful links:\n- [Books' authors repository](https://github.com/tomislav-kozul/or_projekt)\n- [The source API definition for the Books authors](https://github.com/tomislav-kozul/or_projekt/blob/main/openapi.json)",
     "contact": {
       "email": "tomislav.kozul@fer.hr"
     },
