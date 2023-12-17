@@ -1,14 +1,14 @@
 package fer.project.Country;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "country")
 public class Country {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "country_id_generator")
+    @SequenceGenerator(name="country_id_generator", sequenceName = "country_country_id_seq", allocationSize=1)
     private long country_id;
     private String country_name;
 

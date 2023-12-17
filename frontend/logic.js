@@ -32,18 +32,29 @@ function fetchAndDisplayAuthors(filter_by='', filter = '') {
         }
     })
     .then(response => {
-        if (!response.ok) {
-            throw new Error('Letters are not allowed in numerical variables!');
-        }
+        //if (!response.ok) {
+            //console.log(response.json())
+            //if(response.status === 404) {
+                //throw new Error(response.json().message);
+            //} else {
+                //throw new Error('Invalid request!');
+            //}
+            
+        //}
         return response.json();
     })
-    .then(authors => {
+    .then(response => {
+        if(response.status !== 200) {
+            throw new Error(response.message);
+        }
+        authors = response.response
         authorData.setAuthors(authors);
         updateTable(authors);
     })
     .catch((error) => {
-        document.getElementById('result_table').innerHTML = '<table class="result_table"><tr class="table_header"><th class="table_header_cell">Author ID</th><th class="table_header_cell">First name</th><th class="table_header_cell">Last name</th><th class="table_header_cell">Date of birth</th><th class="table_header_cell">Date of Death</th><th class="table_header_cell">Number of children</th><th class="table_header_cell">University</th><th class="table_header_cell">University location</th><th class="table_header_cell">Book ID</th><th class="table_header_cell">Book name</th><th class="table_header_cell">Release year</th></tr></table>';
-        authorData.setAuthors([])
+        document.getElementById('result_table').innerHTML = error;
+        //document.getElementById('result_table').innerHTML = '';
+        //authorData.setAuthors([])
     });
 }
 
@@ -53,9 +64,16 @@ function updateTable(authors) {
 }
 
 function createTable(authors) {
-    let table = '<table class="result_table"><tr class="table_header"><th class="table_header_cell">Author ID</th><th class="table_header_cell">First name</th><th class="table_header_cell">Last name</th><th class="table_header_cell">Date of birth</th><th class="table_header_cell">Date of Death</th><th class="table_header_cell">Number of children</th><th class="table_header_cell">University</th><th class="table_header_cell">University location</th><th class="table_header_cell">Book ID</th><th class="table_header_cell">Book name</th><th class="table_header_cell">Release year</th></tr>';
+    let table = '<table class="result_table"><tr class="table_header"><th class="table_header_cell">Author ID</th><th class="table_header_cell">First name</th><th class="table_header_cell">Last name</th><th class="table_header_cell">Date of birth</th><th class="table_header_cell">Date of death</th><th class="table_header_cell">Number of children</th><th class="table_header_cell">University</th><th class="table_header_cell">University location</th><th class="table_header_cell">Book ID</th><th class="table_header_cell">Book name</th><th class="table_header_cell">Release year</th></tr>';
     
     authors.forEach(author => {
+        if(author.books.length === 0) {
+            book = {}
+            book.book_id = "/";
+            book.book_name = "/";
+            book.release_year = "/";
+            author.books.push(book)
+        }
         
         author.books.forEach(book => {table += `<tr>
         
@@ -69,7 +87,7 @@ function createTable(authors) {
         <td>${author.university ? author.university.country.country_name : 'N/A'}</td>
         <td>${book.book_id}</td>
         <td>${book.book_name}</td>
-        <td>${book.release_year}</td>
+        <td>${book.release_year === 0 ? 'unknown' : book.release_year}</td>
       </tr>`;});
     } );
     table += '</table>';
@@ -157,6 +175,9 @@ function download(content, fileName, contentType) {
 }
 
 function convert_date(date) {
+    if(date === null) {
+        return "Still alive";
+    }
     let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     let day = date.substring(8, 10);
     let month = parseInt(date.substring(5, 7))

@@ -8,10 +8,12 @@ import jakarta.persistence.*;
 public class University {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "university_id_generator")
+    @SequenceGenerator(name="university_id_generator", sequenceName = "university_university_id_seq", allocationSize=1)
     private long university_id;
     private String university_name;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "country_id", referencedColumnName = "country_id")
     private Country country;
 

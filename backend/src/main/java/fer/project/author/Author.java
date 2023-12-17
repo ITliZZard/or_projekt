@@ -11,6 +11,8 @@ import java.util.*;
 @Table(name = "author")
 public class Author implements Comparable {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "author_id_generator")
+    @SequenceGenerator(name="author_id_generator", sequenceName = "author_author_id_seq", allocationSize=1)
     private Long author_id;
     private String first_name;
     private String last_name;
@@ -20,10 +22,7 @@ public class Author implements Comparable {
     private Date death_date;
     private int children_count;
 
-    ///@OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
-    //private List<Bibliography> bibliographies;
-
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinTable(
             name = "bibliography",
             joinColumns = @JoinColumn(name = "author_id"),
@@ -31,7 +30,7 @@ public class Author implements Comparable {
     )
     private Set<Book> books;
 
-    @ManyToOne(optional = true)
+    @ManyToOne(fetch = FetchType.EAGER, optional = true, cascade = CascadeType.PERSIST)
     @JoinTable(
             name = "education",
             joinColumns = @JoinColumn(name = "author_id"),
@@ -98,15 +97,6 @@ public class Author implements Comparable {
     public void setChildren_count(int children_count) {
         this.children_count = children_count;
     }
-
-    //public List<Bibliography> getBibliographies() {
-        //return bibliographies;
-    //}
-
-    //public void setBibliographies(List<Bibliography> bibliographies) {
-        //this.bibliographies = bibliographies;
-    //}
-
 
     public Set<Book> getBooks() {
         return books;

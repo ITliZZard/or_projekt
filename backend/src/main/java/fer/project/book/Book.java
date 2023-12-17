@@ -1,7 +1,5 @@
 package fer.project.book;
 
-import fer.project.author.Author;
-import fer.project.bibliography.Bibliography;
 import jakarta.persistence.*;
 
 @Entity
@@ -9,17 +7,12 @@ import jakarta.persistence.*;
 public class Book {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "book_id_generator")
+    @SequenceGenerator(name="book_id_generator", sequenceName = "book_book_id_seq", allocationSize=1)
     private Long book_id;
     private String book_name;
     private int release_year;
-/*
-    @ManyToOne
-    @JoinColumn(name = "author_id")
-    private Author author;
 
-    @OneToOne(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Bibliography bibliography;
-*/
     public Book() {
     }
 
@@ -34,8 +27,6 @@ public class Book {
         this.book_name = book_name;
         this.release_year = release_year;
     }
-
-
 
     public Long getBook_id() {
         return book_id;
@@ -61,21 +52,12 @@ public class Book {
         this.release_year = release_year;
     }
 
-    /*public Bibliography getBibliography() {
-        return bibliography;
-    }*/
-
-    /*public void setBibliography(Bibliography bibliography) {
-        this.bibliography = bibliography;
-    }*/
-
     @Override
     public String toString() {
         return "Book{" +
                 "book_id=" + book_id +
                 ", book_name='" + book_name + '\'' +
                 ", release_year=" + release_year +
-                //", bibliography=" + bibliography +
                 '}';
     }
 }

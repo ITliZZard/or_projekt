@@ -1,0 +1,591 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Books' authors - OpenAPI 3.0",
+    "description": "This open-source project provides essential data about books' authors in .csv and .json formats. It features an intuitive application with frontend and backend, allowing users to browse, filter, and download author information in a table format.\n\nIdeal for literary enthusiasts and researchers, the platform makes accessing and interacting with author data straightforward and efficient. It serves as a valuable resource for exploring the diverse literary world and its creators.\n\nSome useful links:\n- [Books' authors repository](https://github.com/tomislav-kozul/or_projekt)\n- [The source API definition for the Books authors >>> DODAJ DODAJ]()",
+    "contact": {
+      "email": "tomislav.kozul@fer.hr"
+    },
+    "license": {
+      "name": "CC0 1.0 Universal",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/authors": {
+      "get": {
+        "tags": [
+          "authors"
+        ],
+        "summary": "Fetch authors",
+        "description": "Fetches data about all existing authors",
+        "responses": {
+          "200": {
+            "description": "Elements were successfully fetched",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BooksAuthors"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No elements were found"
+          },
+          "405": {
+            "description": "Invalid request type"
+          }
+        }
+      }
+    },
+    "/authors/find_by/author_id/{id}": {
+      "get": {
+        "tags": [
+          "authors"
+        ],
+        "summary": "Fetch author by ID",
+        "description": "Fetch author with passed ID value",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the author",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Author successfully fetched",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BooksAuthors"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Only numbers are allowed in numerical paramethers"
+          },
+          "404": {
+            "description": "No elements with the given ID were found"
+          },
+          "405": {
+            "description": "Invalid request type"
+          }
+        }
+      }
+    },
+    "/authors/find_by/first_name/{name}": {
+      "get": {
+        "tags": [
+          "authors"
+        ],
+        "summary": "Fetch author by first name",
+        "description": "Fetch author with passed first name",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "authors first name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Author successfully fetched",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BooksAuthors"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No elements with the given first name were found"
+          },
+          "405": {
+            "description": "Invalid request type"
+          }
+        }
+      }
+    },
+    "/authors/find_by/last_name/{name}": {
+      "get": {
+        "tags": [
+          "authors"
+        ],
+        "summary": "Fetch author by last name",
+        "description": "Fetch author with passed lastt name",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "authors last name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Author successfully fetched",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BooksAuthors"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No elements with the given last name were found"
+          },
+          "405": {
+            "description": "Invalid request type"
+          }
+        }
+      }
+    },
+    "/authors/find_by/book_name/{name}": {
+      "get": {
+        "tags": [
+          "authors"
+        ],
+        "summary": "Fetch author who wrote the book",
+        "description": "Fetch author who wrote book with the given name",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "book name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Author successfully fetched",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BooksAuthors"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No elements with the given book name were found"
+          },
+          "405": {
+            "description": "Invalid request type"
+          }
+        }
+      }
+    },
+    "/authors/add": {
+      "post": {
+        "tags": [
+          "authors"
+        ],
+        "summary": "Add author",
+        "description": "Add passed author to database",
+        "parameters": [
+          {
+            "name": "author",
+            "in": "query",
+            "description": "Author to be added in database",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/AuthorNoID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Author successfully added",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BooksAuthors"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid parameters"
+          },
+          "405": {
+            "description": "Invalid request type"
+          }
+        }
+      }
+    },
+    "/authors/delete/{id}": {
+      "delete": {
+        "tags": [
+          "authors"
+        ],
+        "summary": "Delete author",
+        "description": "Delete author with the given ID from database",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the author to be removed",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Author successfully deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Author"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Only numbers are allowed in numerical paramethers"
+          },
+          "404": {
+            "description": "No elements with the given ID were found"
+          },
+          "405": {
+            "description": "Invalid request type"
+          }
+        }
+      }
+    },
+    "/authors/update_book/{id}": {
+      "put": {
+        "tags": [
+          "authors"
+        ],
+        "summary": "Update book values",
+        "description": "Update values of a book with the given id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the book to be updated",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "book",
+            "in": "query",
+            "description": "new book values",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/BookNoID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Author successfully updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Author"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Only numbers are allowed in numerical paramethers"
+          },
+          "404": {
+            "description": "No elements with the given ID were found"
+          },
+          "405": {
+            "description": "Invalid request type"
+          }
+        }
+      }
+    },
+    "/api-docs": {
+      "get": {
+        "tags": [
+          "docs"
+        ],
+        "summary": "OpenAPI specification",
+        "description": "Fetches the OpenAPI specification",
+        "responses": {
+          "200": {
+            "description": "Specification fetched successfully"
+          },
+          "404": {
+            "description": "No specification was found"
+          },
+          "405": {
+            "description": "Invalid request type"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BooksAuthors": {
+        "type": "array",
+        "title": "Books' authors schema",
+        "description": "List of all books' authors",
+        "items": {
+          "$ref": "#/components/schemas/Author"
+        }
+      },
+      "Author": {
+        "type": "object",
+        "title": "Author",
+        "description": "Element containing all data about an author",
+        "properties": {
+          "id": {
+            "title": "Author ID",
+            "description": "Author's ID",
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "first_name": {
+            "title": "First Name",
+            "description": "Author's first name",
+            "type": "string",
+            "example": "George"
+          },
+          "last_name": {
+            "title": "Last Name",
+            "description": "Author's last name",
+            "type": "string",
+            "example": "Orwell"
+          },
+          "date_of_birth": {
+            "title": "Birth Date",
+            "description": "Author's birth date",
+            "type": "string",
+            "format": "date",
+            "example": "1903-06-24T00:00:00.000Z"
+          },
+          "date_of_death": {
+            "title": "Death Date",
+            "description": "Author's death date",
+            "type": "string",
+            "format": "date",
+            "example": "1950-01-21T00:00:00.000Z"
+          },
+          "children_count": {
+            "title": "Number Of Children",
+            "description": "The number of children author had",
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+          },
+          "books": {
+            "title": "Books",
+            "description": "List of books the author has written",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Book"
+            }
+          },
+          "university": {
+            "$ref": "#/components/schemas/University"
+          }
+        }
+      },
+      "AuthorNoID": {
+        "type": "object",
+        "title": "Author without ID",
+        "description": "Element containing all data about an author without ID",
+        "properties": {
+          "first_name": {
+            "title": "First Name",
+            "description": "Author's first name",
+            "type": "string",
+            "example": "George"
+          },
+          "last_name": {
+            "title": "Last Name",
+            "description": "Author's last name",
+            "type": "string",
+            "example": "Orwell"
+          },
+          "date_of_birth": {
+            "title": "Birth Date",
+            "description": "Author's birth date",
+            "type": "string",
+            "format": "date",
+            "example": "1903-06-24T00:00:00.000Z"
+          },
+          "date_of_death": {
+            "title": "Death Date",
+            "description": "Author's death date",
+            "type": "string",
+            "format": "date",
+            "example": "1950-01-21T00:00:00.000Z"
+          },
+          "children_count": {
+            "title": "Number Of Children",
+            "description": "The number of children author had",
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+          },
+          "books": {
+            "title": "Books",
+            "description": "List of books the author has written",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BookNoID"
+            }
+          },
+          "university": {
+            "$ref": "#/components/schemas/UniversityNoID"
+          }
+        }
+      },
+      "University": {
+        "title": "University",
+        "description": "University author has attended",
+        "type": "object",
+        "properties": {
+          "university_id": {
+            "title": "University ID",
+            "description": "ID of the university",
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "university_name": {
+            "title": "University Name",
+            "description": "Name of the university",
+            "type": "string",
+            "example": "Eton College"
+          },
+          "country": {
+            "$ref": "#/components/schemas/Country"
+          }
+        }
+      },
+      "UniversityNoID": {
+        "title": "University without ID",
+        "description": "University author has attended without ID",
+        "type": "object",
+        "properties": {
+          "university_name": {
+            "title": "University Name",
+            "description": "Name of the university",
+            "type": "string",
+            "example": "Eton College"
+          },
+          "country": {
+            "$ref": "#/components/schemas/CountryNoID"
+          }
+        }
+      },
+      "Country": {
+        "title": "Country",
+        "description": "Country in which the university is located in",
+        "type": "object",
+        "properties": {
+          "country_id": {
+            "title": "Country ID",
+            "description": "ID of the country",
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "country_name": {
+            "title": "Country Name",
+            "description": "Name of the country",
+            "type": "string",
+            "example": "United Kingdom"
+          }
+        }
+      },
+      "CountryNoID": {
+        "title": "Country without ID",
+        "description": "Country in which the university is located in without ID",
+        "type": "object",
+        "properties": {
+          "country_name": {
+            "title": "Country Name",
+            "description": "Name of the country",
+            "type": "string",
+            "example": "United Kingdom"
+          }
+        }
+      },
+      "Book": {
+        "title": "Book",
+        "description": "Book the author has written",
+        "type": "object",
+        "properties": {
+          "book_id": {
+            "title": "Book ID",
+            "description": "ID of the book",
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "book_name": {
+            "title": "Book Name",
+            "description": "Name of the book",
+            "type": "string",
+            "example": 1984
+          },
+          "release_year": {
+            "title": "Release Year",
+            "description": "Year the book has been released",
+            "type": "integer",
+            "format": "int32",
+            "example": 1949
+          }
+        }
+      },
+      "BookNoID": {
+        "title": "Book without ID",
+        "description": "Book the author has written without 'Book_ID' value",
+        "type": "object",
+        "properties": {
+          "book_name": {
+            "title": "Book Name",
+            "description": "Name of the book",
+            "type": "string",
+            "example": 1984
+          },
+          "release_year": {
+            "title": "Release Year",
+            "description": "Year the book has been released",
+            "type": "integer",
+            "format": "int32",
+            "example": 1949
+          }
+        }
+      }
+    }
+  }
+}
