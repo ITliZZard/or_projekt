@@ -40,7 +40,7 @@
         }
       }
     },
-    "/authors/find_by/author_id/{id}": {
+    "/authors/filter_by/author_id/{id}": {
       "get": {
         "tags": [
           "authors"
@@ -82,7 +82,7 @@
         }
       }
     },
-    "/authors/find_by/first_name/{name}": {
+    "/authors/filter_by/first_name/{name}": {
       "get": {
         "tags": [
           "authors"
@@ -120,7 +120,7 @@
         }
       }
     },
-    "/authors/find_by/last_name/{name}": {
+    "/authors/filter_by/last_name/{name}": {
       "get": {
         "tags": [
           "authors"
@@ -158,7 +158,7 @@
         }
       }
     },
-    "/authors/find_by/book_name/{name}": {
+    "/authors/filter_by/book_name/{name}": {
       "get": {
         "tags": [
           "authors"
