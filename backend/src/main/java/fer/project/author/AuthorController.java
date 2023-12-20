@@ -89,12 +89,12 @@ public class AuthorController {
         return authorService.getAuthors();
     }*/
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @PostMapping
     public ResponseEntity<Response> addAuthor(@RequestBody Author author) {
         return authorService.addAuthor(author);
     }
 
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Response> deleteAuthor(@PathVariable("id") Long id) {
         return authorService.deleteAuthor(id);
     }
