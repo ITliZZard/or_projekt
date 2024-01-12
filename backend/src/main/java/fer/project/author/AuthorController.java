@@ -4,6 +4,8 @@ import fer.project.book.Book;
 import fer.project.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,7 +22,7 @@ public class AuthorController {
     }
 
     @GetMapping
-    public ResponseEntity<Response> getAuthors() {
+    public ResponseEntity<Response> getAuthors(@AuthenticationPrincipal OidcUser principal) {
         return authorService.getAuthors();
     }
 

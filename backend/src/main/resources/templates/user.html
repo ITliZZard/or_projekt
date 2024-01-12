@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <title>Books' Authors</title>
+    <meta name="description" content="Data about the books' authors" />
+    <meta name="category" content="Education" />
+    <meta name="keywords" content="authors, books, literature, education" />
+    <meta http-equiv="Content-Language" content="English" />
+    <meta name="publication_date" content="2023-10-30" />
+    <meta name="update_frequency" content="undefined" />
+    <meta name="version" content="1.0" />
+    <meta name="author" content="Tomislav Kožul" />
+    <meta name="contact" content="tk53406@fer.hr" />
+    <meta name="license" content="CC0 1.0 Universal" />
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+
+        <h1 class="site_title">USER PROFILE</h1>
+
+        <div class="bar_container">
+            <div class="bar">
+                <button onclick="showIndex()" class="bar_element blue_button">INDEX</button>
+                <button onclick="showDatatable()" class="bar_element blue_button">DATATABLE</button>
+
+                <label class="bar_element">Download data:</label>
+                <button onclick="fetch_json()" class="bar_element green_button">*.csv</button>
+                <button onclick="fetch_csv()" class="bar_element green_button">*.json</button>
+
+                <form name="logoutForm" th:action="@{/logout}" method="post">
+                    <button onclick="clearFilters()" class="bar_element white_button">LOGOUT</button>
+                </form>
+            </div>
+        </div>
+
+        <h1>Info about user</h1>
+        <div class="user_data_container">
+            <div class="user_data">
+                <div class="site_description"><p>Name:</p></div>
+                <div class="site_description"><p><span th:text="${name}">User Name</span></p></div>
+                <div class="site_description"><p>Email:</p></div>
+                <div class="site_description"><p><span th:text="${email}">User Email</span></p></div>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="/js/logic.js" defer></script>
+</body>
+</html>

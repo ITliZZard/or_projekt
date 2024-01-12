@@ -74,6 +74,23 @@ body {
     border-radius: 10px;
 }
 
+.green_button {
+    font-size: 16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #169216;
+    color: white;
+    border-radius: 10px;
+}
+
+.green_button:hover {
+    background-color: white;
+    color: #169216;
+    transition-duration: 500ms;
+}
+
 .blue_button:hover {
     background-color: white;
     color: #0a365c;
@@ -152,6 +169,23 @@ td {
     text-align: center;
 }
 
+.user_data {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.user_data_container {
+    text-align: center;
+    display: inline;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgba(69,142,205,0.4);
+    background-color: white;
+}
+
 #error_field {
     color: red;
 }
+

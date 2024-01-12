@@ -109,22 +109,44 @@ function clearFilters() {
 function download_json() {
         authors = authorData.getAuthors();
         authors_json = []
+
+        let person_context = {};
+        person_context['@vocab'] = "http://schema.org/";
+        person_context['author_id'] = "identifier";
+        person_context['first_name'] = "givenName";
+        person_context['last_name'] = "familyName";
+        person_context['birth_date'] = "birthDate";
+        person_context['death_date'] = "deathDate";
+
+        let book_context = {}
+        book_context['@vocab'] = "http://schema.org/";
+        book_context['book_id'] = "identifier";
+        book_context['book_name'] = "name";
+        book_context['release_year'] = "copyrightYear";
+
         authors.forEach(author => {
             let new_author = {};
 
-            new_author['author_id'] = author.author_id;
-            new_author['first_name'] = author.first_name;
-            new_author['last_name'] = author.last_name;
-            new_author['birth_date'] = convert_date(author.birth_date);
-            new_author['death_date'] = convert_date(author.death_date);
+            let person = {}
+            person['@context'] = person_context;
+            person['@type'] = "Person";
+            person['author_id'] = author.author_id;
+            person['first_name'] = author.first_name;
+            person['last_name'] = author.last_name;
+            person['birth_date'] = convert_date(author.birth_date);
+            person['death_date'] = convert_date(author.death_date);
+
+            new_author['person'] = person;
+
             new_author['children_count'] = author.children_count;
             new_author['attended college'] = author.university ? author.university.university_name : 'No';
             new_author['college location'] = author.university ? author.university.country.country_name : 'N/A';
-            new_author['bibliography'] = [];
 
+            new_author['bibliography'] = [];
             author.books.forEach(book => {
                 let new_book = {}
-
+                new_book['@context'] = book_context;
+                new_book['@type'] = "Book";
                 new_book['book_id'] = book.book_id;
                 new_book['book_name'] = book.book_name;
                 new_book['release_year'] = book.release_year;
@@ -202,7 +224,7 @@ function fetch_json() {
         return response.json();
     })
     .then(authors => {
-        authorData.setAuthors(authors)
+        authorData.setAuthors(authors.response)
         download_json()
     })
     .catch((error) => {
@@ -227,11 +249,26 @@ function fetch_csv() {
         return response.json();
     })
     .then(authors => {
-        authorData.setAuthors(authors)
+        authorData.setAuthors(authors.response)
         download_csv()
     })
     .catch((error) => {
         document.getElementById('error_field').innerHTML = error;
         authorData.setAuthors([])
     });
+}
+
+function showDatatable() {
+    let url = 'http://localhost:8090/datatable';
+    window.location.href = url;
+}
+
+function showUserProfile() {
+    let url = 'http://localhost:8090/user';
+    window.location.href = url;
+}
+
+function showIndex() {
+    let url = 'http://localhost:8090/';
+    window.location.href = url;
 }
