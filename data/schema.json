@@ -9,54 +9,163 @@
         "default": {},
         "title": "Author schema",
         "required": [
-            "author_id",
-            "first_name",
-            "last_name",
-            "birth_date",
-            "death_date",
+            "person",
             "children_count",
+            "attended college",
+            "college location",
             "bibliography"
         ],
         "properties": {
-            "author_id": {
-                "type": "integer",
-                "default": 0,
-                "title": "The author_id Schema",
-                "examples": [
-                    1
-                ]
-            },
-            "first_name": {
-                "type": "string",
-                "default": "",
-                "title": "The first_name Schema",
-                "examples": [
-                    "George"
-                ]
-            },
-            "last_name": {
-                "type": "string",
-                "default": "",
-                "title": "The last_name Schema",
-                "examples": [
-                    "Orwell"
-                ]
-            },
-            "birth_date": {
-                "type": "string",
-                "default": "",
-                "title": "The birth_date Schema",
-                "examples": [
-                    "25 Jun 1903"
-                ]
-            },
-            "death_date": {
-                "type": "string",
-                "default": "",
-                "title": "The death_date Schema",
-                "examples": [
-                    "25 Jun 1903"
-                ]
+            "person": {
+                "type": "object",
+                "default": {},
+                "title": "The person Schema",
+                "required": [
+                    "@context",
+                    "@type",
+                    "author_id",
+                    "first_name",
+                    "last_name",
+                    "birth_date",
+                    "death_date"
+                ],
+                "properties": {
+                    "@context": {
+                        "type": "object",
+                        "default": {},
+                        "title": "The @context Schema",
+                        "required": [
+                            "@vocab",
+                            "author_id",
+                            "first_name",
+                            "last_name",
+                            "birth_date",
+                            "death_date"
+                        ],
+                        "properties": {
+                            "@vocab": {
+                                "type": "string",
+                                "default": "",
+                                "title": "The @vocab Schema",
+                                "examples": [
+                                    "http://schema.org/"
+                                ]
+                            },
+                            "author_id": {
+                                "type": "string",
+                                "default": "",
+                                "title": "The author_id Schema",
+                                "examples": [
+                                    "identifier"
+                                ]
+                            },
+                            "first_name": {
+                                "type": "string",
+                                "default": "",
+                                "title": "The first_name Schema",
+                                "examples": [
+                                    "givenName"
+                                ]
+                            },
+                            "last_name": {
+                                "type": "string",
+                                "default": "",
+                                "title": "The last_name Schema",
+                                "examples": [
+                                    "familyName"
+                                ]
+                            },
+                            "birth_date": {
+                                "type": "string",
+                                "default": "",
+                                "title": "The birth_date Schema",
+                                "examples": [
+                                    "birthDate"
+                                ]
+                            },
+                            "death_date": {
+                                "type": "string",
+                                "default": "",
+                                "title": "The death_date Schema",
+                                "examples": [
+                                    "deathDate"
+                                ]
+                            }
+                        },
+                        "examples": [{
+                            "@vocab": "http://schema.org/",
+                            "author_id": "identifier",
+                            "first_name": "givenName",
+                            "last_name": "familyName",
+                            "birth_date": "birthDate",
+                            "death_date": "deathDate"
+                        }]
+                    },
+                    "@type": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The @type Schema",
+                        "examples": [
+                            "Person"
+                        ]
+                    },
+                    "author_id": {
+                        "type": "integer",
+                        "default": 0,
+                        "title": "The author_id Schema",
+                        "examples": [
+                            1
+                        ]
+                    },
+                    "first_name": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The first_name Schema",
+                        "examples": [
+                            "George"
+                        ]
+                    },
+                    "last_name": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The last_name Schema",
+                        "examples": [
+                            "Orwell"
+                        ]
+                    },
+                    "birth_date": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The birth_date Schema",
+                        "examples": [
+                            "24 Jun 1903"
+                        ]
+                    },
+                    "death_date": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The death_date Schema",
+                        "examples": [
+                            "24 Jun 1903"
+                        ]
+                    }
+                },
+                "examples": [{
+                    "@context": {
+                        "@vocab": "http://schema.org/",
+                        "author_id": "identifier",
+                        "first_name": "givenName",
+                        "last_name": "familyName",
+                        "birth_date": "birthDate",
+                        "death_date": "deathDate"
+                    },
+                    "@type": "Person",
+                    "author_id": 1,
+                    "first_name": "George",
+                    "last_name": "Orwell",
+                    "birth_date": "24 Jun 1903",
+                    "death_date": "24 Jun 1903"
+                }]
             },
             "children_count": {
                 "type": "integer",
@@ -90,103 +199,240 @@
                     "type": "object",
                     "title": "Book schema",
                     "required": [
+                        "@context",
+                        "@type",
                         "book_id",
                         "book_name",
                         "release_year"
                     ],
                     "properties": {
+                        "@context": {
+                            "type": "object",
+                            "title": "The @context Schema",
+                            "required": [
+                                "@vocab",
+                                "book_id",
+                                "book_name",
+                                "release_year"
+                            ],
+                            "properties": {
+                                "@vocab": {
+                                    "type": "string",
+                                    "title": "The @vocab Schema",
+                                    "examples": [
+                                        "http://schema.org/"
+                                    ]
+                                },
+                                "book_id": {
+                                    "type": "string",
+                                    "title": "The book_id Schema",
+                                    "examples": [
+                                        "identifier"
+                                    ]
+                                },
+                                "book_name": {
+                                    "type": "string",
+                                    "title": "The book_name Schema",
+                                    "examples": [
+                                        "name"
+                                    ]
+                                },
+                                "release_year": {
+                                    "type": "string",
+                                    "title": "The release_year Schema",
+                                    "examples": [
+                                        "copyrightYear"
+                                    ]
+                                }
+                            },
+                            "examples": [{
+                                "@vocab": "http://schema.org/",
+                                "book_id": "identifier",
+                                "book_name": "name",
+                                "release_year": "copyrightYear"
+                            },
+                            {
+                                "@vocab": "http://schema.org/",
+                                "book_id": "identifier",
+                                "book_name": "name",
+                                "release_year": "copyrightYear"
+                            }]
+                        },
+                        "@type": {
+                            "type": "string",
+                            "title": "The @type Schema",
+                            "examples": [
+                                "Book"
+                            ]
+                        },
                         "book_id": {
                             "type": "integer",
                             "title": "The book_id Schema",
                             "examples": [
-                                1,
-                                2
+                                2,
+                                1
                             ]
                         },
                         "book_name": {
                             "type": "string",
                             "title": "The book_name Schema",
                             "examples": [
-                                "1984",
-                                "Animal Farm"
+                                "Animal Farm",
+                                "1984"
                             ]
                         },
                         "release_year": {
                             "type": "integer",
                             "title": "The release_year Schema",
                             "examples": [
-                                1949,
-                                1945
+                                1945,
+                                1949
                             ]
                         }
                     },
                     "examples": [{
-                        "book_id": 1,
-                        "book_name": "1984",
-                        "release_year": 1949
-                    },
-                    {
+                        "@context": {
+                            "@vocab": "http://schema.org/",
+                            "book_id": "identifier",
+                            "book_name": "name",
+                            "release_year": "copyrightYear"
+                        },
+                        "@type": "Book",
                         "book_id": 2,
                         "book_name": "Animal Farm",
                         "release_year": 1945
+                    },
+                    {
+                        "@context": {
+                            "@vocab": "http://schema.org/",
+                            "book_id": "identifier",
+                            "book_name": "name",
+                            "release_year": "copyrightYear"
+                        },
+                        "@type": "Book",
+                        "book_id": 1,
+                        "book_name": "1984",
+                        "release_year": 1949
                     }]
                 },
                 "examples": [
                     [{
-                        "book_id": 1,
-                        "book_name": "1984",
-                        "release_year": 1949
-                    },
-                    {
+                        "@context": {
+                            "@vocab": "http://schema.org/",
+                            "book_id": "identifier",
+                            "book_name": "name",
+                            "release_year": "copyrightYear"
+                        },
+                        "@type": "Book",
                         "book_id": 2,
                         "book_name": "Animal Farm",
                         "release_year": 1945
+                    },
+                    {
+                        "@context": {
+                            "@vocab": "http://schema.org/",
+                            "book_id": "identifier",
+                            "book_name": "name",
+                            "release_year": "copyrightYear"
+                        },
+                        "@type": "Book",
+                        "book_id": 1,
+                        "book_name": "1984",
+                        "release_year": 1949
                     }]
                 ]
             }
         },
         "examples": [{
-            "author_id": 1,
-            "first_name": "George",
-            "last_name": "Orwell",
-            "birth_date": "25 Jun 1903",
-            "death_date": "25 Jun 1903",
+            "person": {
+                "@context": {
+                    "@vocab": "http://schema.org/",
+                    "author_id": "identifier",
+                    "first_name": "givenName",
+                    "last_name": "familyName",
+                    "birth_date": "birthDate",
+                    "death_date": "deathDate"
+                },
+                "@type": "Person",
+                "author_id": 1,
+                "first_name": "George",
+                "last_name": "Orwell",
+                "birth_date": "24 Jun 1903",
+                "death_date": "24 Jun 1903"
+            },
             "children_count": 1,
             "attended college": "Eton College",
             "college location": "United Kingdom",
             "bibliography": [{
-                "book_id": 1,
-                "book_name": "1984",
-                "release_year": 1949
-            },
-            {
+                "@context": {
+                    "@vocab": "http://schema.org/",
+                    "book_id": "identifier",
+                    "book_name": "name",
+                    "release_year": "copyrightYear"
+                },
+                "@type": "Book",
                 "book_id": 2,
                 "book_name": "Animal Farm",
                 "release_year": 1945
+            },
+            {
+                "@context": {
+                    "@vocab": "http://schema.org/",
+                    "book_id": "identifier",
+                    "book_name": "name",
+                    "release_year": "copyrightYear"
+                },
+                "@type": "Book",
+                "book_id": 1,
+                "book_name": "1984",
+                "release_year": 1949
             }]
         }]
     },
-    "description": "Data about the books' authors",
-    "author": "Tomislav Kožul",
     "examples": [
         [{
-            "author_id": 1,
-            "first_name": "George",
-            "last_name": "Orwell",
-            "birth_date": "25 Jun 1903",
-            "death_date": "25 Jun 1903",
+            "person": {
+                "@context": {
+                    "@vocab": "http://schema.org/",
+                    "author_id": "identifier",
+                    "first_name": "givenName",
+                    "last_name": "familyName",
+                    "birth_date": "birthDate",
+                    "death_date": "deathDate"
+                },
+                "@type": "Person",
+                "author_id": 1,
+                "first_name": "George",
+                "last_name": "Orwell",
+                "birth_date": "24 Jun 1903",
+                "death_date": "24 Jun 1903"
+            },
             "children_count": 1,
             "attended college": "Eton College",
             "college location": "United Kingdom",
             "bibliography": [{
-                "book_id": 1,
-                "book_name": "1984",
-                "release_year": 1949
-            },
-            {
+                "@context": {
+                    "@vocab": "http://schema.org/",
+                    "book_id": "identifier",
+                    "book_name": "name",
+                    "release_year": "copyrightYear"
+                },
+                "@type": "Book",
                 "book_id": 2,
                 "book_name": "Animal Farm",
                 "release_year": 1945
+            },
+            {
+                "@context": {
+                    "@vocab": "http://schema.org/",
+                    "book_id": "identifier",
+                    "book_name": "name",
+                    "release_year": "copyrightYear"
+                },
+                "@type": "Book",
+                "book_id": 1,
+                "book_name": "1984",
+                "release_year": 1949
             }]
         }]
     ]
